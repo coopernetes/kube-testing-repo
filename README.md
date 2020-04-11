@@ -122,6 +122,15 @@ Done!
 
 Helm Dry Run with new secret keys in Deployment:
 
+```bash
+$ export AAD_CLIENT_ID=$(cat sp.json | jq -r '.appId')
+$ export AAD_CLIENT_SECRET=$(cat sp.json | jq -r '.password')
+$ export TENANT_ID=$(cat azure.json | jq -r '.tenantId')
+$ export SUBSCRIPTION_ID=$(cat azure.json | jq -r '.subscriptionId')
+$ export RESOURCE_GROUP=$(cat azure.json | jq -r '.resourceGroup')
+$ cat values-private-dns.yaml | envsubst | helm install external-dns ~/code/bitnami-charts/bitnami/external-dns --dry-run --values -
+```
+
 ```yaml
 # Source: external-dns/templates/secret.yaml
 apiVersion: v1
