@@ -1,0 +1,8 @@
+provider: azure
+azure:
+  resourceGroup: ${RESOURCE_GROUP}
+  subscriptionId: ${SUBSCRIPTION_ID}
+  tenantId: ${TENANT_ID}
+  useManagedIdentityExtension: true
+podLabels:
+  aadpodidbinding: external-dns-msi-binding

@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: nginx
+  labels:
+    app: nginx
+  annotations:
+    external-dns.alpha.kubernetes.io/hostname: "nginx.9def03aa-041d-4a55-885f-4f9ceffbfc80.example.com"
+spec:
+  ports:
+  - port: 80
+    protocol: TCP
+    targetPort: 80
+  selector:
+    app: nginx
+

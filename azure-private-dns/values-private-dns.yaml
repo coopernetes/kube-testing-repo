@@ -1,0 +1,7 @@
+provider: azure-private-dns
+azure:
+  resourceGroup: ${RESOURCE_GROUP}
+  subscriptionId: ${SUBSCRIPTION_ID}
+  tenantId: ${TENANT_ID}
+  aadClientId: ${AAD_CLIENT_ID}
+  aadClientSecret: ${AAD_CLIENT_SECRET}
